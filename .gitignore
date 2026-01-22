@@ -1,0 +1,19 @@
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Configuraciones de editores de código
+.vscode/
+.idea/
+
+# Archivos de registro (logs)
+*.log
+
+# Archivos de variables de entorno (SEGURIDAD CRÍTICA)
+.env
+config.js
+
+# Carpetas de dependencias futuras
+node_modules/
+dist/
+build/
