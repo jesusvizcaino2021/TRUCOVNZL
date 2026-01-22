@@ -1,0 +1,333 @@
+/* --- RESET GENERAL --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0b0f19;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* --- FONDO --- */
+.bg-image {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('fondo-truco.jpg');
+    background-size: cover; background-position: center;
+    z-index: -2;
+}
+
+.bg-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, 
+        rgba(11, 15, 25, 0.4) 0%, 
+        rgba(11, 15, 25, 0.6) 100%);
+    z-index: -1;
+}
+
+/* --- HEADER CRISTAL --- */
+header {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 85px;
+    background: rgba(255, 255, 255, 0.03); 
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    z-index: 2000;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu-icon {
+    width: 30px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.menu-icon span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 3px;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 900;
+    color: white;
+    text-decoration: none;
+}
+
+.vnzl {
+    background: linear-gradient(to right, #FFCC00 0%, #00247D 50%, #CF142B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 5px rgba(255, 204, 0, 0.2));
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+.btn-login {
+    background: transparent;
+    border: 1px solid #FFCC00;
+    color: #FFCC00;
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.btn-register {
+    background: #FFCC00;
+    border: none;
+    color: #000;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* --- PANEL MENÚ SIDEBAR --- */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 4000;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    padding-top: 100px;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar.active {
+    width: 300px;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar a {
+    padding: 20px 35px;
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 45px;
+    cursor: pointer;
+    color: white;
+}
+
+/* --- SECCIÓN HERO --- */
+#main-content {
+    padding-top: 120px;
+    position: relative;
+    z-index: 10;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 60px 5%;
+}
+
+.logo-hero {
+    font-size: 4.5rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.download-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.download-btn {
+    padding: 15px 35px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+.download-btn.pc { background: #ffffff; color: #0b0f19; }
+.download-btn.mobile { background: #10b981; color: white; }
+
+/* --- SECCIÓN DUAL --- */
+.dual-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 10%;
+    gap: 50px;
+}
+
+.product-card {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    width: 310px;
+    text-align: center;
+}
+
+.price { color: #ffffff; font-size: 2rem; margin: 20px 0; font-weight: bold; }
+
+.buy-btn-USDT {
+    width: 100%;
+    padding: 15px;
+    background: #38bdf8;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.buy-btn-VES {
+    width: 100%;
+    padding: 15px;
+    background: #38bdf8;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+/* CARTA 3D */
+.card-container-3d {
+    width: 120px; 
+    height: 220px;
+    perspective: 1200px;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+}
+
+.card-3d {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.card-container-3d:hover .card-3d {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card-front img, .card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.card-front {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+/* --- MODALES --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 5000;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(10px);
+}
+
+.modal-content {
+    background: #161b22;
+    margin: 10% auto;
+    padding: 45px;
+    max-width: 440px;
+    border-radius: 20px;
+    border: 1px solid #FFCC00;
+    position: relative;
+    text-align: center;
+}
+
+.close-modal {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    background: #0b0f19;
+    border: 1px solid #30363d;
+    color: white;
+    border-radius: 10px;
+}
