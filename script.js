@@ -62,18 +62,3 @@ window.onclick = function(event) {
         cerrarFormulario();
     }
 }
-
-// LÓGICA DE LA CARTA INTERACTIVA (AÑADIDA PARA FUNCIONALIDAD 3D)
-document.addEventListener("DOMContentLoaded", function() {
-    const card = document.getElementById('interactiveCard');
-    if(card) {
-        card.addEventListener('click', function() {
-            // Verifica el estado actual de la rotación y lo alterna
-            if (this.style.transform === "rotateY(180deg)") {
-                this.style.transform = "rotateY(0deg)";
-            } else {
-                this.style.transform = "rotateY(180deg)";
-            }
-        });
-    }
-});
