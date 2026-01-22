@@ -135,6 +135,14 @@ function registrarDescarga(plataforma) {
     alert(`Iniciando descarga del instalador para ${plataforma}.`);
 }
 
+// --- EXPOSICIÓN GLOBAL (CRÍTICO PARA QUE FUNCIONEN LOS ONCLICK EN HTML) ---
+window.toggleMenu = toggleMenu;
+window.mostrarFormulario = mostrarFormulario;
+window.cerrarFormulario = cerrarFormulario;
+window.procesarPagoUSDT = procesarPagoUSDT;
+window.procesarPagoBS = procesarPagoBS;
+window.registrarDescarga = registrarDescarga;
+
 // Cerrar modal al hacer clic fuera
 window.onclick = function(event) {
     const modal = document.getElementById("modal-auth");
@@ -156,3 +164,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+        });
+    }
+});
+
