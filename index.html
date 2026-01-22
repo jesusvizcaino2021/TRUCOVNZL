@@ -3,89 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRUCOVNZL - Oficial</title>
+    <title>TRUCOVNZL</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="bg-image"></div>
-    <div class="bg-overlay"></div>
-
     <div id="sidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
-        <div class="sidebar-links">
-            <a href="#" onclick="toggleMenu()">Inicio</a>
-            <a href="#" onclick="toggleMenu()">Proyectos</a>
-            <a href="#" onclick="toggleMenu()">Contacto</a>
+        <div class="sidebar-content">
+            <h3>MENÚ</h3>
+            <a href="#">Inicio</a>
+            <a href="#" onclick="mostrarFormulario('login')">Mi Cuenta</a>
+            <a href="#">Tienda de Créditos</a>
+            <a href="#">Reglas del Truco</a>
+            <a href="#">Soporte</a>
         </div>
     </div>
 
-    <header id="main-header">
-        <nav class="navbar">
-            <div class="logo-group">
-                <div class="menu-icon" onclick="toggleMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <a href="index.html" class="logo">TRUCO<span class="vnzl">VNZL</span></a>
+    <header>
+        <div class="nav-container">
+            <div class="menu-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-            
+            <div class="logo">
+                <h1>TRUCO<span>VNZL</span></h1>
+            </div>
             <div class="auth-buttons">
                 <button class="btn-login" onclick="mostrarFormulario('login')">Iniciar Sesión</button>
                 <button class="btn-register" onclick="mostrarFormulario('register')">Registrarse</button>
             </div>
-        </nav>
+        </div>
     </header>
 
+    <section class="hero">
+        <div class="hero-content">
+            <h1>TRUCO<span>VNZL</span></h1>
+            <p>La plataforma definitiva para jugar al Truco con reglas profesionales.</p>
+            <div class="download-buttons">
+                <button class="btn-pc" onclick="registrarDescarga('PC')">Descargar para PC</button>
+                <button class="btn-mobile" onclick="registrarDescarga('Android/iOS')">Descargar para Android/iOS</button>
+            </div>
+        </div>
+
+        <div class="card-container" style="perspective: 1000px; width: 160px; height: 240px; margin: 20px auto; position: relative;">
+            <div class="card-3d" id="interactiveCard" style="width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 0.6s; cursor: pointer;">
+                <div class="card-face card-front" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 12px; border: 2px solid gold; overflow: hidden; background: #2c3e50;">
+                    <img src="reverso.PNG" alt="Reverso" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="card-face card-back" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; transform: rotateY(180deg); border-radius: 12px; border: 2px solid gold; overflow: hidden; background: white;">
+                    <img src="anverso.PNG" alt="Anverso" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="price-card glass">
+            <h3>TRUCO<span>VNZL</span></h3>
+            <div class="amount">100 COIN = $1</div>
+            <button class="buy-btn-USDT" onclick="procesarPagoUSDT(1)">Comprar con USDT</button>
+            <button class="buy-btn-VES" onclick="procesarPagoBS()">Comprar con VES</button>
+        </div>
+    </section>
+
     <div id="modal-auth" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="cerrarFormulario()">&times;</span>
-            <div id="form-container"></div>
+        <div class="modal-content glass">
+            <span class="close" onclick="cerrarFormulario()">&times;</span>
+            <div id="form-container">
+                </div>
         </div>
     </div>
-
-    <main id="main-content">
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1 class="logo-hero">TRUCO<span class="vnzl">VNZL</span></h1>
-                <p>La plataforma definitiva para jugar al Truco con reglas profesionales.</p>
-                <div class="download-container">
-                    <button class="download-btn pc" onclick="registrarDescarga('PC')">Descargar para PC</button>
-                    <button class="download-btn mobile" onclick="registrarDescarga('Móvil')">Descargar para Android/iOS</button>
-                </div>
-            </div>
-        </section>
-
-        <section class="dual-section">
-            <div class="store-preview">
-                <div class="product-card">
-                    <h3>TRUCO<span class="vnzl">VNZL</span></h3>
-                    <p class="price">100 COIN = $1 <span class="vnzl"></span></p>
-                    <button class="buy-btn-USDT" onclick="procesarPagoUSDT(1)">Comprar con USDT</button>
-                    <button class="buy-btn-VES" onclick="alert('Procesando pago en VES...')">Comprar con VES</button>
-                </div>
-            </div>
-
-            <div class="card-container" style="perspective: 1000px; width: 200px; height: 300px; margin: 20px auto;">
-    <div class="card-3d" id="interactiveCard" style="width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 0.6s; cursor: pointer;">
-        
-        <div class="card-face card-front" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; align-items: center; justify-content: center; background: #2c3e50; border-radius: 15px; border: 2px solid gold; overflow: hidden;">
-            <img src="https://raw.githubusercontent.com/HaydenH98/Playing-Cards/master/png-cards/back.png" alt="Reverso" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-
-        <div class="card-face card-back" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; transform: rotateY(180deg); display: flex; align-items: center; justify-content: center; background: white; border-radius: 15px; border: 2px solid gold; overflow: hidden;">
-            <img src="https://raw.githubusercontent.com/HaydenH98/Playing-Cards/master/png-cards/ace_of_spades.png" alt="As de Espadas" style="width: 100%; height: 100%; object-fit: contain;">
-        </div>
-        
-    </div>
-</div>
-            </div>
-        </section>
-    </main>
 
     <script src="script.js"></script>
 </body>
-
 </html>
+</html>
+
 
