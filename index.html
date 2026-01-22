@@ -12,18 +12,18 @@
     <div class="bg-overlay"></div>
 
     <div id="sidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="window.toggleMenu()">&times;</a>
         <div class="sidebar-links">
-            <a href="#" onclick="toggleMenu()">Inicio</a>
-            <a href="#" onclick="toggleMenu()">Proyectos</a>
-            <a href="#" onclick="toggleMenu()">Contacto</a>
+            <a href="#" onclick="window.toggleMenu()">Inicio</a>
+            <a href="#" onclick="window.toggleMenu()">Proyectos</a>
+            <a href="#" onclick="window.toggleMenu()">Contacto</a>
         </div>
     </div>
 
     <header id="main-header">
         <nav class="navbar">
             <div class="logo-group">
-                <div class="menu-icon" onclick="toggleMenu()">
+                <div class="menu-icon" onclick="window.toggleMenu()">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -32,15 +32,15 @@
             </div>
             
             <div class="auth-buttons">
-                <button class="btn-login" onclick="mostrarFormulario('login')">Iniciar Sesión</button>
-                <button class="btn-register" onclick="mostrarFormulario('register')">Registrarse</button>
+                <button class="btn-login" onclick="window.mostrarFormulario('login')">Iniciar Sesión</button>
+                <button class="btn-register" onclick="window.mostrarFormulario('register')">Registrarse</button>
             </div>
         </nav>
     </header>
 
     <div id="modal-auth" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="cerrarFormulario()">&times;</span>
+            <span class="close-modal" onclick="window.cerrarFormulario()">&times;</span>
             <div id="form-container"></div>
         </div>
     </div>
@@ -51,8 +51,8 @@
                 <h1 class="logo-hero">TRUCO<span class="vnzl">VNZL</span></h1>
                 <p>La plataforma definitiva para jugar al Truco con reglas profesionales.</p>
                 <div class="download-container">
-                    <button class="download-btn pc" onclick="registrarDescarga('PC')">Descargar para PC</button>
-                    <button class="download-btn mobile" onclick="registrarDescarga('Móvil')">Descargar para Android/iOS</button>
+                    <button class="download-btn pc" onclick="window.registrarDescarga('PC')">Descargar para PC</button>
+                    <button class="download-btn mobile" onclick="window.registrarDescarga('Móvil')">Descargar para Android/iOS</button>
                 </div>
             </div>
         </section>
@@ -62,14 +62,14 @@
                 <div class="product-card">
                     <h3>TRUCO<span class="vnzl">VNZL</span></h3>
                     <p class="price">100 COIN = $1 <span class="vnzl"></span></p>
-                    <button class="buy-btn-USDT" onclick="procesarPagoUSDT(1)">Comprar con USDT</button>
-                    <button class="buy-btn-VES" onclick="alert('Procesando pago en VES...')">Comprar con VES</button>
+                    <button class="buy-btn-USDT" onclick="window.procesarPagoUSDT(1)">Comprar con USDT</button>
+                    <button class="buy-btn-VES" onclick="window.procesarPagoBS()">Comprar con VES</button>
                 </div>
             </div>
 
             <div class="card-interaction-container">
                 <div class="card-container-3d">
-                    <div class="card-3d">
+                    <div class="card-3d" id="interactiveCard">
                         <div class="card-front">
                             <img src="reverso.png" alt="Reverso de la carta">
                         </div>
@@ -83,7 +83,5 @@
     </main>
 
     <script type="module" src="script.js"></script>
-
-    <script src="script.js"></script>
 </body>
 </html>
