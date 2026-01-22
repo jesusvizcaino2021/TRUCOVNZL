@@ -293,7 +293,7 @@ header {
     transform: rotateY(180deg);
 }
 
-/* --- MODALES --- */
+/* --- MODALES (CORREGIDOS PARA SCROLL Y VISIBILIDAD) --- */
 .modal {
     display: none;
     position: fixed;
@@ -301,17 +301,24 @@ header {
     top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0,0,0,0.85);
     backdrop-filter: blur(10px);
+    /* Permitir scroll en el contenedor principal del modal */
+    overflow-y: auto;
+    padding: 50px 0;
 }
 
 .modal-content {
     background: #161b22;
-    margin: 10% auto;
+    /* Centrado vertical y horizontal */
+    margin: auto; 
     padding: 45px;
+    width: 90%;
     max-width: 440px;
     border-radius: 20px;
     border: 1px solid #FFCC00;
     position: relative;
     text-align: center;
+    /* Evita que el modal se pegue abajo y permite terminar el scroll */
+    margin-bottom: 50px;
 }
 
 .close-modal {
@@ -322,7 +329,7 @@ header {
     cursor: pointer;
 }
 
-input {
+input, select {
     width: 100%;
     padding: 15px;
     margin: 15px 0;
